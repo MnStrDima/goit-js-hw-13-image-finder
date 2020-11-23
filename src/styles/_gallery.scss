@@ -16,7 +16,7 @@ img.photo-card__img {
 }
 
 .gallery-item {
-  padding: 10px;
+  position: relative;
   display: flex;
   align-items: center;
   width: 1fr;
@@ -26,30 +26,31 @@ img.photo-card__img {
 }
 
 .stats {
-  margin: 15px 5px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: 'stats-item stats-item stats-item stats-item';
-  grid-gap: 5px;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .stats-item {
   padding: 10px;
   display: flex;
+  background-color: rgba(255, 255, 255, 0.6);
   align-items: center;
   justify-content: space-around;
-  width: 1fr;
-  grid-area: 'stats-item';
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
 }
 
 p.stats-item {
   color: rgb(62, 65, 68);
   margin: 0;
   padding: 0;
-  border-radius: 5px;
+  //   border-radius: 5px;
 }
 
 .gallery {
