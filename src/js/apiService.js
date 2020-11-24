@@ -28,20 +28,6 @@ export class ImagesQuery {
     this.page = 1;
   }
 
-  // createImagesListMarkup(images, allImagesCount) {
-  //   this.render(imagesTemplate(images));
-  //   if (allImagesCount > 12) {
-  //     onNotify(
-  //       `We have found ${allImagesCount} images. Scroll to see all pictures.`,
-  //       'info',
-  //       'Info',
-  //     );
-  //   }
-  //   if (allImagesCount < 12) {
-  //     onNotify(`We have found ${allImagesCount} images.`, 'info', 'Info');
-  //   }
-  // }
-
   get query() {
     return this.searchQuery;
   }

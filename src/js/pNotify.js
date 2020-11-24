@@ -15,15 +15,15 @@ export function onNotify(
   text = 'Something went wrong',
   type = 'error',
   title = '',
-  stack,
-  delay = 2000,
+  delay = 1000,
 ) {
   const options = {
     title,
     text,
     type,
-    stack: stack === undefined ? stackForNotify : new Stack(stack),
+    stack: stackForNotify,
     delay,
+    mode: 'light',
     width: `${document.body.clientWidth}px`,
   };
   alert(options);

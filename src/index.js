@@ -41,6 +41,16 @@ function onSearch(e) {
 
 function createImagesListMarkup(images, allImagesCount) {
   refs.imageList.insertAdjacentHTML('beforeend', imagesTemplate(images));
+  document
+    .querySelectorAll('.gallery-item')
+    .forEach(item => item.addEventListener('click', onGalleryItemClick));
+  if (images.length === 0) {
+    onNotify(
+      `You have scrolled to the end of ${allImagesCount} items collection.`,
+      'notice',
+      'Info',
+    );
+  }
 }
 
 function onDataReceived(data) {
@@ -51,11 +61,15 @@ function onDataReceived(data) {
   createImagesListMarkup(data.hits, data.totalHits);
 }
 
-function fetchAndIncrementPage() {
-  imagesQuery.fetchImages().then(data => {
-    onDataReceived(data);
-    imagesQuery.incrementPage();
-  });
+async function fetchAndIncrementPage() {
+  try {
+    imagesQuery.fetchImages().then(data => {
+      onDataReceived(data);
+      imagesQuery.incrementPage();
+    });
+  } catch (error) {
+    console.log('Error in fetchAndIncrementPage function:', error);
+  }
 }
 
 function clearGallery() {
@@ -74,3 +88,10 @@ const observer = new IntersectionObserver(onEntry, {
   rootMargin: '150px',
 });
 observer.observe(refs.scrollHelper);
+
+function onGalleryItemClick(e) {
+  const imageInstance = basicLightbox.create(`
+ 	<img class="large-image" src="${e.currentTarget.dataset.largeImage}" alt=""/>
+ `);
+  imageInstance.show();
+}
