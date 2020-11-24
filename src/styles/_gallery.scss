@@ -1,7 +1,12 @@
+.image-wrapper {
+  display: block;
+  overflow: hidden;
+  height: 220px;
+}
+
 .gallery-item {
   position: relative;
-  display: flex;
-  align-items: center;
+  display: block;
   width: 1fr;
   grid-area: 'gallery-item';
   border-radius: 10px;

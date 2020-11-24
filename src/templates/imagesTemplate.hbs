@@ -1,7 +1,9 @@
 {{#each this}}
 <li class="gallery-item" data-large-image={{largeImageURL}}>
     <div class="photo-card">
-        <img class="photo-card__img" src="{{webformatURL}}" alt="{{id}}" />
+        <div class="image-wrapper">
+            <img class="photo-card__img" src="{{webformatURL}}" alt="{{id}}" />
+        </div>
 
         <div class="stats">
             <p class="stats-item">

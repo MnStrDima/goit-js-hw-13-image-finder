@@ -85,7 +85,7 @@ const onEntry = entries => {
 };
 
 const observer = new IntersectionObserver(onEntry, {
-  rootMargin: '150px',
+  rootMargin: '100px',
 });
 observer.observe(refs.scrollHelper);
 
