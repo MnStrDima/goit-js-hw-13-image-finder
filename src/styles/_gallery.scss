@@ -1,12 +1,18 @@
-.image-wrapper {
-  display: block;
-  overflow: hidden;
-  height: 220px;
+.navbar {
+  padding: 0;
+  height: 3em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar-brand {
+  margin: 0;
+  padding: 0;
 }
 
 .gallery-item {
   position: relative;
   display: block;
+  height: 220px;
   width: 1fr;
   grid-area: 'gallery-item';
   border-radius: 10px;
@@ -20,6 +26,7 @@
   .stats {
     background-color: rgba(255, 255, 255, 1);
   }
+
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
 }
 
