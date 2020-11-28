@@ -1,3 +1,4 @@
+import './preloader';
 import * as basicLightbox from 'basiclightbox';
 import imagesTemplate from '../templates/imagesTemplate.hbs';
 import { onNotify } from './pNotify.js';
